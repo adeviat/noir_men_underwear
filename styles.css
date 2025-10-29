@@ -1,3 +1,5 @@
+/* Estilo base: Desktop */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -13,9 +15,12 @@ html, body {
   height: 100vh;
   background: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 100;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 #noir-text {
@@ -23,20 +28,15 @@ html, body {
   gap: 1rem;
   font-size: 12vw;
   font-weight: 900;
+  flex-wrap: nowrap;
+  user-select: none;
 }
 
 .fade-letter {
   opacity: 0;
   transition: opacity 0.4s ease;
   color: black;
-}
-
-#collection-btn.visible {
-  opacity: 1;
-}
-
-.hidden {
-  display: none;
+  user-select: none;
 }
 
 #mens-wear-container {
@@ -45,6 +45,7 @@ html, body {
   border: 3px solid black;
   width: fit-content;
   cursor: default;
+  user-select: none;
 }
 
 #mens-wear-container div {
@@ -65,7 +66,7 @@ html, body {
 }
 
 #collection-btn {
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -74,28 +75,15 @@ html, body {
   cursor: pointer;
   background-color: #222;
   color: white;
-  display: block;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   opacity: 0;
   transition: opacity 0.5s ease;
-  margin-top: 3rem;
 }
 
 #collection-btn.visible {
   opacity: 1;
-}
-
-#fixed-module {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  z-index: 100;
 }
 
 #scroll-indicator {
@@ -115,4 +103,63 @@ html, body {
 #scroll-indicator.hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+
+/* Tablet (768px - 1023px) */
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #noir-text {
+    font-size: 16vw;
+    gap: 0.8rem;
+  }
+
+  #mens-wear-container div {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  #collection-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 2.5rem;
+  }
+
+  #scroll-indicator {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (menos de 768px) */
+
+@media (max-width: 767px) {
+  #noir-text {
+    font-size: 22vw;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #mens-wear-container {
+    flex-direction: column;
+    border-width: 2px;
+  }
+
+  #mens-wear-container div {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  #collection-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  #scroll-indicator {
+    font-size: 0.9rem;
+    top: 1.5rem;
+  }
 }
