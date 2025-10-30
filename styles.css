@@ -8,12 +8,6 @@ html, body {
   font-family: "Lato", sans-serif;
 }
 
-.bungee-regular {
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 #fixed-module {
   position: fixed;
   top: 0;
@@ -79,8 +73,8 @@ html, body {
 #collection-btn {
   margin-top: 3rem;
   padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.9rem;
+  font-weight: lighter;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -100,7 +94,7 @@ html, body {
 #scroll-indicator {
   position: absolute;
   top: 2rem;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: black;
   user-select: none;
@@ -126,18 +120,19 @@ html, body {
   }
 
   #mens-wear-container div {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0.4rem 0.8rem;
   }
 
   #collection-btn {
-    font-size: 1rem;
+    font-size: 2rem;
+    font-weight: lighter;
     padding: 0.6rem 1.2rem;
     margin-top: 2.5rem;
   }
 
   #scroll-indicator {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 
@@ -162,15 +157,17 @@ html, body {
   }
 
   #collection-btn {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     padding: 0.5rem 1rem;
     margin-top: 2rem;
     width: 100%;
     max-width: 280px;
+    font-weight: lighter;
+    justify-content: center;
   }
 
   #scroll-indicator {
-    font-size: 0.9rem;
+    font-size: 1.9rem;
     top: 1.5rem;
   }
 }
