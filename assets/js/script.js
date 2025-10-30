@@ -45,3 +45,59 @@ function updateOpacity(scrollPos) {
     letter.style.opacity = opacity;
   });
 }
+
+// Menu toggle 
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('.main-nav');
+
+if (menuToggle && mainNav) {
+    mainNav.setAttribute('aria-hidden', 'true');
+    
+    menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+ 
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        mainNav.setAttribute('aria-hidden', isExpanded);
+
+        menuToggle.setAttribute(
+            'aria-label', 
+            isExpanded ? 'Abrir menú de navegación' : 'Cerrar menú de navegación'
+        );
+    });
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 767) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mainNav.setAttribute('aria-hidden', 'true');
+                menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+            }
+        });
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mainNav.setAttribute('aria-hidden', 'true');
+            menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+            menuToggle.focus();
+        }
+    });
+    
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 767) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mainNav.removeAttribute('aria-hidden');
+            } else {
+                if (menuToggle.getAttribute('aria-expanded') !== 'true') {
+                    mainNav.setAttribute('aria-hidden', 'true');
+                }
+            }
+        }, 250);
+    });
+}
