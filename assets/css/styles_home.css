@@ -198,20 +198,6 @@ html, body {
         max-height: 40px;
     }
 
-    .main-nav {
-        display: none;
-        grid-column: 1 / -1;
-        grid-row: 2;
-        position: relative;
-        background-color: #ffffff;
-        padding: 1rem 0;
-        border-top: 1px solid #e0e0e0;
-    }
-
-    .main-nav[aria-hidden="false"] {
-        display: block;
-    }
-
     .nav-list {
         flex-direction: column;
         gap: 0;
