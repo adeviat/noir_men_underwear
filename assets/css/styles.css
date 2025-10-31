@@ -5,101 +5,91 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
-  font-family: "Roboto", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Bungee", sans-serif;
+    margin-bottom: 1rem;
 }
 
 h1 {
-    font-family: "Bungee", sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
-    margin-bottom: 1rem;
 }
 
 h2 {
-    font-family: "Bungee", sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
 }
 
 h3 {
-    font-family: "Bungee", sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
 }
 
 p {
-    font-family: "Roboto", sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
 #fixed-module {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../imgs/noir_background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../imgs/noir_background.jpg') center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
 }
 
 #noir-text {
-  display: flex;
-  gap: 1rem;
-  font-size: 12vw;
-  font-weight: 900;
-  flex-wrap: nowrap;
-  user-select: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 12vw;
+    font-weight: 900;
+    user-select: none;
 }
 
 .fade-letter {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  color: black;
-  user-select: none;
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    color: black;
+    user-select: none;
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
 }
 
 #mens-wear-container {
-  margin-top: 1.5rem;
-  display: flex;
-  border: 3px solid black;
-  width: fit-content;
-  cursor: default;
-  user-select: none;
+    margin-top: 1.5rem;
+    display: flex;
+    border: 3px solid black;
+    width: fit-content;
+    cursor: default;
 }
 
 #mens-wear-container div {
-  font-size: 1.2rem;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  user-select: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    user-select: none;
 }
 
 .mens {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 .wear {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
 
 #collection-btn {
@@ -116,7 +106,7 @@ p {
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 #collection-btn:hover {
@@ -127,88 +117,85 @@ p {
 }
 
 #collection-btn.visible {
-  opacity: 1;
+    opacity: 1;
 }
 
 #scroll-indicator {
-  position: absolute;
-  top: 2rem;
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: black;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  opacity: 1;
-  transition: opacity 0.5s ease;
+    position: absolute;
+    top: 2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: black;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 #scroll-indicator.hidden {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
-/* ========== MEDIA QUERIES ========== */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    #noir-text {
+        font-size: 16vw;
+        gap: 0.8rem;
+    }
 
-/* Tablet (768px - 1023px) */
+    #mens-wear-container div {
+        font-size: 2rem;
+        padding: 0.4rem 0.8rem;
+    }
 
-@media (max-width: 1023px) and (min-width: 768px) {
-  #noir-text {
-    font-size: 16vw;
-    gap: 0.8rem;
-  }
+    #collection-btn,
+    #scroll-indicator {
+        font-weight: lighter;
+    }
 
-  #mens-wear-container div {
-    font-size: 2rem;
-    padding: 0.4rem 0.8rem;
-  }
+    #collection-btn {
+        font-size: 1.5rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 2.5rem;
+    }
 
-  #collection-btn {
-    font-size: 1.5rem;
-    font-weight: lighter;
-    padding: 0.6rem 1.2rem;
-    margin-top: 2.5rem;
-  }
-
-  #scroll-indicator {
-    font-size: 2rem;
-  }
+    #scroll-indicator {
+        font-size: 2rem;
+    }
 }
 
-/* Mobile (menos de 768px) */
+@media screen and (max-width: 767px) {
+    #noir-text {
+        font-size: 22vw;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-@media (max-width: 767px) {
-  #noir-text {
-    font-size: 22vw;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    #mens-wear-container {
+        flex-direction: column;
+        border-width: 2px;
+    }
 
-  #mens-wear-container {
-    flex-direction: column;
-    border-width: 2px;
-  }
+    #mens-wear-container div {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
 
-  #mens-wear-container div {
-    font-size: 0.9rem;
-    padding: 0.3rem 0.6rem;
-  }
+    #collection-btn {
+        font-size: 1rem;
+        font-weight: lighter;
+        padding: 0.5rem 1rem;
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
 
-  #collection-btn {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    margin-top: 2rem;
-    width: 100%;
-    max-width: 280px;
-    font-weight: lighter;
-    justify-content: center;
-  }
-
-  #scroll-indicator {
-    font-size: 1.9rem;
-    top: 1.5rem;
-  }
+    #scroll-indicator {
+        font-size: 1.9rem;
+        top: 1.5rem;
+    }
 }
-
