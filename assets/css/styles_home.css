@@ -361,6 +361,14 @@ p {
     min-height: 50px;
 }
 
+.under-const {
+    text-align: center;
+    padding: 100px 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #555555;
+}
+
 @media screen and (max-width: 1023px) and (min-width: 768px) {
     .main-header {
         grid-template-columns: 150px 1fr 80px;
